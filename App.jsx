@@ -1,11 +1,33 @@
-import One from "./one"
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
 
 function App() {
-  const username = "chai aur code"
+
+  let [counter , setCounter ] = useState(15)
+
+  //let counter = 15
+
+  const addValue = () => {
+    //counter = counter + 1
+    setCounter(counter + 1)
+  }
+
+  const removevalue = () => {
+    setCounter(counter - 1)
+  }
+
   return (
     <>
-    <One/>
-    <h1>chai aur react{username} </h1>
+      <h1>Chai aur React</h1>
+      <h2>Counter value: {counter} </h2>
+
+      <button  onClick={addValue}>Add value {counter}</button>
+      <br />
+      <button  onClick={removevalue}>Remove value {counter}</button>
+      <p>footer: {counter}</p>
     </>
   )
 }
